@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>STUDENTS</TITLE>
+</head>
+
+<body><a href="/" back to home </a>
+    </a>
+    <h2>students</h2>
+    <form action="/add-student" method="POST">
+        <INPUT TYPE="TEXT names=" name" ph="enter name" />
+
+        <button type=" " submit it">Add</button>
+    </form>
+    {% if students %}
+    <ul>
+        {% for s in studentss %}
+        <li>{{s}}</li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> ADD ONE </P>
+    {% end if %}
+</body>
+<!--TODO: connect to a js and html file -->
+
+</html>
