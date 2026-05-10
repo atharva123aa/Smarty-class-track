@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Mark Attendance</title>
+    <style>
+        body {
+            font-family: arial;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 16px;
+        }
+
+        td,
+        th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background: #4caf50;
+            color: #fff;
+        }
+
+
+        .btn {
+            padding: 9px 17px;
+            background: green;
+            color: white;
+            border: none;
+            margin-top: 12px;
+            cursor: pointer;
+            font-size: 15px;
+
+        }
+
+        a {
+            color: #555;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="/">BACK TO Hme</a>
+    <H2>MARK ATENDANCE</H2>
+    <form action="/ save Attendance" method="Post">>
+        <table>
+            <tr>
+                <th>NAME</TH>
+
+                <th>PRESENT</TH>
+                <th>ABSENT</TH>
+
+
+            </tr>
+            <!--LOOP-->
+            {% for a in s %}
+            <tr>
+                <td> {{ s }} </td>
+                <td> <input type="radio" name="{{ s }}" value="present" checked></td>
+                <td> <input type="radio" name="{{ s }}" value="absent"></td>
+            </tr>
+            {% end for % }
+        </table>
+
+
+        <!--Todo:ADD A DATA PICKER-->
+        <button class="btn" type="submit">save attendance</button>
+    </FORM>
+</BODY>
+
+</HTML>
