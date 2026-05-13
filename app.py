@@ -7,78 +7,79 @@ app = Flask(__name__)
 STUDENTS_file="students.txt"
 ATTENDANCE_file="attendance.txt"
 def get_students():
-    def   save student (name):
-         with open   (STUDENTS_file,"a") as f:
-            f.write(name + "\n")
-        with open
-    if not   (m.path.exists(STUDENTS_file):
+    if not   (m.path.exists(STUDENTS_file)):
         return []
-        def save_attendance(data):
-            today=(str(date.today()
-            with open(ATTENDANCE_file, "a") as f:
-for student,status in data.items() :
-f.write  (today + ","+  student + ","+ status+ "/n" )
+    with open  (STUDENTS_file,"r") as f:
+            names=[line.strip() for line in f.readlines()]
+    return [n for n in names if n !=""]
+
+def   save_student (name):
+     with open   (STUDENTS_file,"a") as f:
+        f.write(name + "\n")
+
+def save_attendance(data):
+    today=str(date.today())
+    with open(ATTENDANCE_file, "a") as f:
+        for student,status in data.items() :
+            f.write  (today + ","+ student + ","+ status+ "\n" )
 
 #TODO: ADD A ATTENDANCE SYSTEM IF NEEDS TO CHANGE THE ALREADY MARK TODAY
 # A system
- def (get_attendance):
-    if not os.path.exists(ATTENDANCE_file):
+def get_attendance():
+    if not m.path.exists(ATTENDANCE_file):
         return[]
-        with open (ATTENDANCE_file,"r") as f:
-            line=f,readlines()
+    with open (ATTENDANCE_file,"r") as f:
+            lines=f.readlines()
             records=[]
             for l in lines:
                 l=l.strip()
                 if l!="":
                     parts=l.split(",")
-records.append(parts)
-return records
-
-        with open  (STUDENTS_file,"r") as f:
-            names=[line.script() for line in f.readlines()]
-            [return n for n in names if n !=""]
+                    records.append(parts)
+    return records
 
 
 @app.route("/") 
 def home():
     return render_template("index.html")
-  @app.route("/") 
+
+@app.route("/students") 
 def students():
     all_students=get_students()
-return render_template("students.html", students=all_students)
+    return render_template("students.html", students=all_students)
 
 
-@app.route("/add student", methods=["POST"])
+@app.route("/add_student", methods=["POST"])
 def add_student():
     name=request.form.get("name")
-     if name and name.strip() !="":
-        @app.route("/attendance")
-        def attendancee():
-            s= get_students()
-            return render_template("attendance.html", students=s)
-            @app.route("/save_attendance", methods=["POST"])
+    if name and name.strip() !="":
+        save_student(name.strip())
+    return redirect("/students")
 
+@app.route("/attendance")
+def attendancee():
+    s= get_students()
+    return render_template("attendance.html", students=s)
 
+@app.route("/save_attendance", methods=["POST"])
+def submit_attendance():
+    s=get_students()
+    data={}
+    for a in s:
+        #PRESENT ABSENT
+        val= request.form.get(a)
+        if val:
+            data[a]=val
+        else:
+            data[a]="ABSENT"
+    save_attendance(data)
+    return redirect("/view_attendance")
 
-            def submit_attendance():
-                s=get_students()
-                data={}
-                for a in s:
-                    #PRESENT ABSENT
-                val= request.form.get(a)
-                if val:
-                    data(a)=val
-                    else:
-                        data[a]="ABSENT "
-                        save_attendance(data)
-                        return redirect("/view_attendance")
-                        @app.route("/view_attendance")
-                        def view_attendance():
-                            records=get_attendance()
-                            return render_template("view_attendance.html", records=records)
+@app.route("/view_attendance")
+def view_attendance():
+    records=get_attendance()
+    return render_template("view_attendance.html", records=records)
                             
-
-
 
     #TODO: add more route later
 
