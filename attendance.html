@@ -52,7 +52,7 @@
 
     <a href="/">BACK TO Hme</a>
     <H2>MARK ATENDANCE</H2>
-    <form action="/ save Attendance" method="Post">>
+    <form action="/save_attendance" method="POST">
         <table>
             <tr>
                 <th>NAME</TH>
@@ -63,13 +63,13 @@
 
             </tr>
             <!--LOOP-->
-            {% for a in s %}
+            {% for a in students %}
             <tr>
-                <td> {{ s }} </td>
-                <td> <input type="radio" name="{{ s }}" value="present" checked></td>
-                <td> <input type="radio" name="{{ s }}" value="absent"></td>
+                <td> {{ a }} </td>
+                <td> <input type="radio" name="{{ a }}" value="present" checked></td>
+                <td> <input type="radio" name="{{ a }}" value="absent"></td>
             </tr>
-            {% end for % }
+            {% endfor %}
         </table>
 
 
