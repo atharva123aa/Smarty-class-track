@@ -1,27 +1,26 @@
 <html>
 
 <head>
-    <title>STUDENTS</TITLE>
+    <title>STUDENTS</title>
 </head>
 
-<body><a href="/" back to home </a>
-    </a>
+<body><a href="/">back to home</a>
     <h2>students</h2>
-    <form action="/add-student" method="POST">
-        <INPUT TYPE="TEXT names=" name" ph="enter name" />
+    <form action="/add_student" method="POST">
+        <input type="text" name="name" placeholder="enter name" />
 
-        <button type=" " submit it">Add</button>
+        <button type="submit">Add</button>
     </form>
     {% if students %}
     <ul>
-        {% for s in studentss %}
+        {% for s in students %}
         <li>{{s}}</li>
 
         {% endfor %}
     </ul>
     {% else %}
-    <p> ADD ONE </P>
-    {% end if %}
+    <p> ADD ONE </p>
+    {% endif %}
 </body>
 <!--TODO: connect to a js and html file -->
 
