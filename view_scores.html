@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title> Score records </title>
+    <style>
+        body {
+            font-family: Tahoma;
+            padding: 19px;
+            background: #00b8b8;
+        }
+
+        table {
+            width: 91%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        td,
+        th {
+            padding: 9px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #2196F3;
+            color: white;
+        }
+
+        .Aplus {
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        .A {
+            color: Green;
+        }
+
+        .B {
+            color: blue;
+        }
+
+        .C {
+            color: orange;
+        }
+
+        .D {
+            color: darkorange;
+        }
+
+        .F {
+            color: red;
+            font-weight: bold
+        }
+
+
+
+        a {
+            color: #555;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 11px;
+        }
+    </style>
+    <!--make a proper area like ptm where you can browse-->
+
+</head>
+
+
+
+<body>
+    <a href="/">home</a>
+    <h2> SCORE RECS.</H2>
+    <!--TODO:add filter for all-->
+    {% if records %}
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>student</th>
+            <th>marks</th>
+            <th>grade or position</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            <td>{{ r[0] }}</td>
+            <td>{{ r[1] }}</td>
+            <td>{{ r[2] }}</td>
+            <td class="{{ r[3] }}">{{ r[3] }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>
+        no score </P>
+    {% endif %}
+    <br>
+    <a href="/scores">enter scores</a>
+
+</body>
+
+</html>

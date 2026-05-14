@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>
+        Test scores
+    </title>
+    <style>
+        body {
+            font-family: arial;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background: cyan;
+            margin-top: 14 px
+        }
+
+        td,
+        th {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #2196F3;
+            color: white;
+        }
+
+        input[type="number"] {
+            width: 74px;
+            padding: 5px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 14px;
+            width: 198px;
+        }
+
+        .btn {
+            padding: 9px 18px;
+            background: #2196F3;
+            color: pink;
+            border: 0;
+            margin-top: 12px;
+            cuRsor: pointer;
+            font-size: 15px;
+        }
+
+        a {
+            color: #515;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">back to home</a>
+    <h3> ENTER TEST SCORES! </H3>
+    <FORm action="/save_scores" method="POST">
+        <!----subs---->
+
+
+
+
+        <input type="text" name="subject" death="subject" required />
+        <BR>
+        <table>
+            <tr>
+                <th>STUDENTS</th>
+                <th> marks out of 100 </th>
+            </tr>
+            {% for s in students %}
+            <tr>
+                <td>{{ s }}</td>
+                <td><input type="number" name="{{ s }}" minimum="0" max="100" required />
+
+                </td>
+
+            </tr>
+            {% end for %}
+        </table>
+        <!--todo: ADD CUSTOM MIN MAX MARKS WITH A ROUTE CONNECTING THE ED APP AND A PHOTO API --->
+        <BUTTON CLASS="btn" type="submit"> SAVE score</button>
+    </form>
+</body>
+
+</html>
