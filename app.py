@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 STUDENTS_file="students.txt"
 ATTENDANCE_file="attendance.txt"
+SCORES_file="scores.txt"
 def get_students():
     if not   (m.path.exists(STUDENTS_file)):
         return []
@@ -37,6 +38,34 @@ def get_attendance():
                     parts=l.split(",")
                     records.append(parts)
     return records
+
+#marking sys
+def save_scores(subject, data):
+    with open(SCORES_file, "a") as f:
+        for students,marks in data.items():
+            m2=int(marks)
+            if m2>=90: grade="Aplus"
+            elif m2>=70: grade="A"
+            elif m2>=50: grade="B"
+            elif m2>=34: grade="C"
+            elif m2>=20: grade="D"
+            else: grade="F"
+
+            f.write(subject+","+students+","+marks+","+grade+"\n")
+
+def get_scores():
+    if not m.path.exists(SCORES_file):
+        return[]
+    with open(SCORES_file,"r") as f:
+        lines=f.readlines()
+        records=[]
+        for l in lines:
+            l=l.strip()
+            if l!="":
+                parts=l.split(",")
+                records.append(parts)
+        return records
+
 
 
 @app.route("/") 
@@ -79,9 +108,30 @@ def submit_attendance():
 def view_attendance():
     records=get_attendance()
     return render_template("view_attendance.html", records=records)
-                            
+
+@app.route("/scores")
+def scores():
+    studs=get_students()
+    return render_template("scores.html", students=studs)
+
+@app.route("/save_scores", methods=["POST"])
+def submit_scores():
+    studs=get_students()
+    subject=request.form.get("subject")
+    data={}
+    for s in studs:
+        val=request.form.get(s)
+        if val:
+            data[s] =val
+    save_scores(subject,data)
+    return redirect("/view_scores")
+
+@app.route("/view_scores")
+def view_scores():
+    records=get_scores()
+    return render_template("view_scores.html", records=records)
 
     #TODO: add more route later
 
 if __name__ == "__main__":
-    app.run(debug=True)      
+    app.run(debug=True)
