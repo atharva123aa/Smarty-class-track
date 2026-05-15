@@ -43,7 +43,10 @@ def get_attendance():
 def save_scores(subject, data):
     with open(SCORES_file, "a") as f:
         for students,marks in data.items():
-            m2=int(marks)
+            try:
+                m2=int(marks)
+            except ValueError:
+                m2=0
             if m2>=90: grade="Aplus"
             elif m2>=70: grade="A"
             elif m2>=50: grade="B"
@@ -86,7 +89,7 @@ def add_student():
     return redirect("/students")
 
 @app.route("/attendance")
-def attendancee():
+def attendance():
     s= get_students()
     return render_template("attendance.html", students=s)
 
@@ -118,6 +121,8 @@ def scores():
 def submit_scores():
     studs=get_students()
     subject=request.form.get("subject")
+    if not subject or subject.strip()=="":
+        return redirect("/scores")
     data={}
     for s in studs:
         val=request.form.get(s)
@@ -140,23 +145,23 @@ def report(name):
 
     for r in all_att:
         if r[1]==name:
-            if r[2].strip.lower()=="present":
+            if r[2].strip().lower()=="present":
                 present+=1
-                else:
-absent+=1
+            else:
+                absent+=1
 
 
-all_scores=get_scores()
-my_scores=[]
-for r in all_scores:
-    if r[1]==name:
-        my_scores.append(r)
+    all_scores=get_scores()
+    my_scores=[]
+    for r in all_scores:
+        if r[1]==name:
+            my_scores.append(r)
 
-    return render_template("report.html", name=name, present=present,absent=absent, scores=my-scores)
+    return render_template("report.html", name=name, present=present,absent=absent, scores=my_scores)
         #listing page
         #TODO: CONNECT MY OTHER TODO PDF EXPORT HERE TO GET REPORT CARD COPY WITH SOME RPORTS
 
-@APP.ROUTE("/report_card")
+@app.route("/report_card")
 def report_card():
 
     studs=get_students()
@@ -169,7 +174,5 @@ def report_card():
 
     #TODO: add more route later
 
-if __name__ == "__main__":
-    app.run(debug=True)
 if __name__ == "__main__":
     app.run(debug=True)
