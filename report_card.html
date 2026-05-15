@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title> REPORT CARD </TItle>
+    <style>
+        body {
+            font-family: Verdana;
+            Background: lime;
+            padding: 20px;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            background: white;
+            padding: 10px 17px;
+            margin: 6px 0;
+
+            border-radius: 3px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #2196F4;
+            font-size: 15px;
+        }
+
+        a.back {
+            color: #555;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<!---ADD A CUSTOMISD TEMPELATE SECTION -->
+
+<BODY>
+    <A CLASS="back" href="/">HOME</a>
+    <h2> Report cards </h2>
+    <p> PICK STUDENT </P>
+    {% if students %}
+    <ul>
+        {% for s in students %}
+        <li><a href="/report/{{s}}">{{s}}</a>
+        </li>
+        {% endfor %}
+
+        {% else %}
+        <p> NO students found </p>
+        {% endif %}
+
+</body>
+
+</html>
