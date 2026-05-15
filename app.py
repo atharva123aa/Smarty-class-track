@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request,redirect
+    from flask import Flask, render_template, request,redirect
 from datetime import date 
 import os as m
 app = Flask(__name__)
@@ -7,6 +7,7 @@ app = Flask(__name__)
 STUDENTS_file="students.txt"
 ATTENDANCE_file="attendance.txt"
 SCORES_file="scores.txt"
+Quiz_file="quiz.txt"
 def get_students():
     if not   (m.path.exists(STUDENTS_file)):
         return []
@@ -69,11 +70,60 @@ def get_scores():
                 records.append(parts)
         return records
 
+def save_question(q,opts,ans):
+    with open(QUIZ_file,"r") as f:
+        lines=f.readlines()
+        qs=[]
+        for l in lines:
+            l=l.strip()
+            if l!="":
+                qs.append(l.split("|"))
+                return qs
 
 
-@app.route("/") 
-def home():
-    return render_template("index.html")
+
+@app.route("/quiz")
+def quiz():
+    qs=get_questions()
+    return render_template("quiz.html", questions=qs)
+@app.routd("/add_question")
+
+def add_question():
+    return render_template("add_question.html")
+@app.route("/save_question", methods=["POST"])
+def submit_question():
+    
+    q=request.form.get("question")
+    opts=[request.form.get("optA")
+          request.form.get("optB")
+          request.form.get("optC")
+          request.form.get("optD")
+    ]
+    ans=request.form.get("answer")
+    save_question(q,opts,ans)
+    return redirect("/add_question")
+
+@app.route("/submit_quiz", methods=["POST"])
+def submit_quiz():
+    qs=get_questions()
+    score=0
+    total=len(qs)
+    results=[]
+    for i,q in enumerate(qs):
+
+        chosen=request.form.get("q"+str(i))
+        correct=q[5]
+        #check correct
+        if chosen==correct:
+            score+=1
+            results.append((q[0],chosen,correct,"right"))
+        else:
+             results.append((q[0],chosen,correct,"wrongt"))
+    return render_template("quiz_result.html",score=score,total=total, results=results)
+    
+
+
+
 
 @app.route("/students") 
 def students():
@@ -152,7 +202,7 @@ def report(name):
 
 
     all_scores=get_scores()
-    my_scores=[]
+    my_scores=[] 
     for r in all_scores:
         if r[1]==name:
             my_scores.append(r)
