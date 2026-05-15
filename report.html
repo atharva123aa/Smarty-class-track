@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>{{ Name}}'s Report</title>
+    <style>
+        body {
+            font-family: arial;
+            background: #E2E5DE;
+            padding: 23px;
+            max-width: 609px;
+        }
+
+        h2 {
+            color: #335;
+        }
+
+        .box {
+            background: #6fcf97;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #2196F3;
+            color: white;
+        }
+
+        .present {
+            color: green;
+            font-weight: bold;
+        }
+
+        .absent {
+            color: red
+        }
+
+        a {
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* TODO; ADD PRINT BUTN */
+    </STYLE>
+</head>
+
+<body>
+    <a href="/report_card">← back</a>
+    <h2>{{ name }}</h2>
+    <!--summary of attendances-->
+    <div class="box">
+        <h3> ATTENDANCE</H3>
+        <P CLASS="present">present: {{ present }} days</p>
+        <P CLASS="absent">absent: {{ absent }} days</p>
+    </div>
+    <!-- todo: show  %age -->
+
+    <div class="box">
+
+        <h3>TEST RESULT AND SCORE</H3>
+        {% if scores %}
+        <table>
+            <tr>
+                <th>subject</th>
+                <th>marks</th>
+                <th>grade</th>
+            </tr>
+            {% for s in scores %}
+            <tr>
+                <td>{{ s[0] }}</td>
+                <td>{{ s[2] }}</td>
+                <td>{{ s[3] }}</td>
+            </tr>{% endfor %}
+        </TABLE>
+        {% else %}
+        <p> NO score found </p>
+        {% end if %}
+    </div>
+</body>
+
+</html>
