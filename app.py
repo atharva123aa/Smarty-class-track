@@ -131,7 +131,45 @@ def view_scores():
     records=get_scores()
     return render_template("view_scores.html", records=records)
 
+@app.route("/report/<name>")
+def report(name):
+    #attendance counting
+    all_att=get_attendance()
+    present=0
+    absent=0
+
+    for r in all_att:
+        if r[1]==name:
+            if r[2].strip.lower()=="present":
+                present+=1
+                else:
+absent+=1
+
+
+all_scores=get_scores()
+my_scores=[]
+for r in all_scores:
+    if r[1]==name:
+        my_scores.append(r)
+
+    return render_template("report.html", name=name, present=present,absent=absent, scores=my-scores)
+        #listing page
+        #TODO: CONNECT MY OTHER TODO PDF EXPORT HERE TO GET REPORT CARD COPY WITH SOME RPORTS
+
+@APP.ROUTE("/report_card")
+def report_card():
+
+    studs=get_students()
+    return render_template("report_card.html",  students=studs)
+
+                
+
+
+
+
     #TODO: add more route later
 
+if __name__ == "__main__":
+    app.run(debug=True)
 if __name__ == "__main__":
     app.run(debug=True)
