@@ -87,6 +87,9 @@ def get_questions():
         if l != "":
             qs.append(l.split("|"))
     return qs
+    @app.route("/")
+def home():
+    return render_template("index.html")
 
 
 @app.route("/quiz")
