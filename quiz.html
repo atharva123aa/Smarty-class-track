@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <a href="/">+ ADD QUESTION</A>
+    <a href="/add_question">+ ADD QUESTION</A>
     {% if questions %}
     <form action="/submit_quiz" method="POST">
         {% for i in range(questions|length) %}
