@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>
+        Add questions </title>
+    <style>
+        body {
+            font-family: HELVETICA;
+            BACKGROUND: #E2E5DE;
+            PADDING: 21PX;
+        }
+
+        INPUT[type="text"] {
+            width: 80%;
+            padding: 9px;
+            margin: 5px 0;
+            font-size: 14 px;
+            display: block;
+
+
+
+        }
+
+        select {
+            padding: 7px;
+            font-size: 9px;
+            margin-top: 6px;
+        }
+
+        .btn {
+            padding: 9px 18px;
+            background: #9c27b0;
+            color: #ffffff;
+            border: none;
+            margin-top: 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        a {
+            color: #455;
+            font-size: 13px;
+        }
+
+        label {
+            font-size: 13px;
+            COLOR: #444
+        }
+    </STYLE>
+
+</HEAD>
+
+<BODY><A HREF="/quiz"> BACK TO QUIZ</A>
+    <h2> ADD QUESTIONS </H2>
+    <form action="/save_question" method="POST">
+        <LABEL> QUESTION</LABEL>
+        <INPUT type="text" name="question" placeholder="TYPE YOUR QUESTION" required />
+        <label>OPTION A</LABEL>
+        <input type="text" name="optA" placeholder="option a" required />
+        <label>OPTION B</label>
+        <input type="text" name="optB" placeholder="option b" required />
+        <label> OPTION C</label>
+        <input type="text" name="optC" placeholder="option c" required />
+        <label> OPTION D</label>
+        <input type="text" name="optD" placeholder="option d" required />
+        <label> CORRECT! answer </LABEL>
+        <select name="answer">
+            <option value="A"></OPTION>
+            <option value="B"></OPTION>
+
+            <option value="C"></OPTION>
+            <option value="D"></OPTION>
+        </SELECT>
+        <!--todoadd del. and restoe button later-->
+        <button class="btn" type="submit">savequestion</button>
+    </form>
+
+</body>
+
+</html>
