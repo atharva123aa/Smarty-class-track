@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>
+        ADD QUESTION</TITLe>
+    <style>
+        body {
+            font-family: verdana;
+            background: blue;
+            padding: 21px;
+        }
+
+        .qbox {
+            background: #f0f0f0;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .qbox p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        label {
+            display: block;
+            margin: 4px 0;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 9px 19px;
+            background: #9c27b0;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        a {
+            color: #555;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">+ ADD QUESTION</A>
+    {% if questions %}
+    <form action="/submit_quiz" method="POST">
+        {% for i in range(questions|length) %}
+
+
+        <div class="qbox">
+            <!--question no. and text-->
+            <p>{{loop.index}}. {{ questions [i][0]}}
+            </p>
+            <label><input type="radio" name="q{{i}}" value="A" required> A - {{ questions[i][1] }}</LABEL>
+            <label><input type="radio" name="q{{i}}" value="B"> B - {{ questions[i][2] }}</LABEL>
+            <label><input type="radio" name="q{{i}}" value="C"> C - {{ questions[i][3] }}</LABEL>
+
+            <label><input type="radio" name="q{{i}}" value="D"> D - {{ questions[i][4]}} </LABEL>
+        </div>
+        {% endfor %}
+        <button class="btn" type="submit"> submit Quiz</button>
+    </form>
+    {% else %}
+    <p> NO QUESTIONS YET--<A HREF="/add_question"> ADD ONE </A> </P>
+    {% endif %}
+
+</body>
+<html>
