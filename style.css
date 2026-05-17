@@ -28,7 +28,7 @@ BODY {
     background-color: var(--bg);
     color: var(--text);
     padding: 20px;
-    background-image: radial-gradient(var(--border)) 1px, transparent 0);
+    background-image: radial-gradient(var(--border) 1px, transparent 0);
     background-size: 24px 24px;
     background-opacity: 0.05
 }
@@ -54,7 +54,7 @@ BODY {
     display: inline-block;
     font-size: 12px;
     font-weight: 700;
-    background var(--secondary);
+    background: var(--secondary);
     color: white;
     padding: 5px 8px;
     margin-top: 10px;
@@ -64,83 +64,126 @@ BODY {
 
 
 }
-.Cards {display:grid;grid-template-columns: repeat(2, 1fr);
-    gap:25px;
-    max-width:761px;
-    margin:30px AUTO;
-    PADDING: 0  20Px;
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 761px;
+    margin: 30px AUTO;
+    PADDING: 0 20Px;
 
 
 }
-@media
-(max-width:641px;) {
-.cards {grid-template-columns: 1fr; }
+
+@media (max-width:641px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
 }
-.CARD {
-    background var(--panel);
-    BORDER:3PX SOLID VAR(--border);
-    border-radius:0px;/*edgy border*/
-    padding :24Px;
-    text-decoration:none;
-    color var (--text);box-shadow:4px 4px 0px var(--border);
+
+.card {
+    background: var(--panel);
+    BORDER: 3PX SOLID VAR(--border);
+    border-radius: 0px;
+    /*edgy border*/
+    padding: 24Px;
+    text-decoration: none;
+    color: var (--text);
+    box-shadow: 4px 4px 0px var(--border);
     transition: all 0.15s ease;
 
 
 
 
 }
+
 .card:hover {
-    transform: translate(-2px,-2px);
-    box-shadow: 6px 6px 0px var(-border);
-    background var(--primary);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border);
+    background: var(--primary);
 
 }
-.card .icon{
-    font-size:31px;
-    margin-bottom:15px;display:block  ;
+
+.card .icon {
+    font-size: 31px;
+    margin-bottom: 15px;
+    display: block;
 
 
 }
-.card h3{
-    font-size:20px;
-    font-weight:700;
-    text-transform:uppercase;
-    margin-bottom:6px;
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
 }
-.card p{
-    font-size:14px;
-    line-height:1.4px;
-    color: var(text);
-}/*carding done*/
-.divider{
-    text-align:center;font-weight:700;font-size:31px;margin:30px 0;
+
+.card p {
+    font-size: 14px;
+    line-height: 1.4px;
+    color: var(--text);
+}
+
+/*carding done*/
+.divider {
+    text-align: center;
+    font-weight: 700;
+    font-size: 31px;
+    margin: 30px 0;
     color: var(--border);
 }
+
 /*   dedeicate to with great styling */
 .about {
-    max-width:750px;
-    margin:0 auto 50PX;
-    PADDING:0 20PX;
+    max-width: 750px;
+    margin: 0 auto 50PX;
+    PADDING: 0 20PX;
 
 }
-.ABOUT-box{background: var(--panel);
-    border:3px solid var(--border);padding:30Px;box-shadow:-6px 6px 0px var(--border);
+
+.ABOUT-box {
+    background: var(--panel);
+    border: 3px solid var(--border);
+    padding: 30Px;
+    box-shadow: -6px 6px 0px var(--border);
 
 }
-.about-box h2{
-    font-size:24px;
-    text-transform:uppercase;
-    margin-bottom:12px;
+
+.about-box h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 
 }
-.ABOUT-BOX p{font-size:15px; line-height:1.6;}
-.about-box .name{
-    display:inline-block;
-    margin-top:24px ;
-    font-size:14px;
-    font-weight:700;
-    text-transform:uppercase;
-    border-bottom:2px dashed var(--border);padding-bottom:5px;
+
+.ABOUT-BOX p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.about-box .name {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px dashed var(--border);
+    padding-bottom: 5px;
 
 
-} 
+}
+
+/*footer*/
+footer {
+    text-align: left;
+    max-width: 785;
+
+    margin: 0 auto;
+    padding: 21px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-top: 3px solid var(--border);
+}
