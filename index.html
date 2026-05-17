@@ -2,44 +2,61 @@
 
 <head>
     <title>Smarty Class track</title>
-    <style>
-        body {
-            font-family: arial;  
-            background: #f0f0f0;
-            text-align: center;
-            padding: 51px;
-
-        }
-
-        h1 {
-            color: aqua;
-        }
-
-        a {
-            display: block;
-            margin: 10px auto;
-            color: blue;
-
-        }
-    </style>
+    <link rel="stylesheet" href="/templates/style.css">
+    
 </head>
 
 <body>
+    <!--header-->
+    <div class="header">
     <h1> Smarty class track </h1>
 
-    <p> i think it works </p>
-    <a href="/students">Manage Students</a>
-    <a href="/attendance">Mark Attendance</a>
-    <a href="/view_attendance">View Attendance</a>
-     <a href="/scores">SCORES</a>
-    <a href="/view_scores">VIEW SCORES</A>
-    <a href="/report_card">Report Cards</A>
-    <a href="/quiz">QUIZ</A>
-    <A HREF="/add_question"></A>
-    
-    
+    <p class="tagline">"THE CLASS OF YOURS DESERVE BETTER, BE SMART AND TRACKY" </P>
+    </DIV>
+    <div class="cards">
+    <a href="/students" class="card">
+        <div class="icon">👨‍🎓</div>
+        <h3> MAnage Students</h3>
+        <p> Add and Manage your student list</p></a>
+    <a href="/attendance">class="card"><div class="icon">📋</div>
+        <h3>  MARK ATTENDANCE!</H3>
+            <P> MARK present or absent.</p></a>
+    <a href="/view_attendance"class="card">
+        <div class="icon">📅
+            <h3> View Attendance</h3>
+            <p> CHECK RECORDS</P>
+            </A>
+    <a href="/scores" class="card"><div class="icon">✏️</div>
+        <h3> test scores!</h3><p>ENTER MARKS AND GRADE GETS CALCULATED</P></A>
+             <a href="/view_scores" class="card">
+                <div class="icon">📊</div>
+                <h3> VIEW THE SCORES</H3><p>SEE YOUR MARKS AND GRADE</P>
+                </A>
+                <a href="/report_card" class="card">
+                    <div class="icon">📄</div>
+                    <h3>REPORT CARDS</H3>
+                        <P> FULL REPORTS PER STUDENTS</p></A>
 
 
+    <a href="/quiz"class="card"><div class="icon">🧠</div>
+        <h3> QUIZ!</H3>
+            <P>CREATE AND TAKE QUIZZES</P></A></DIV>
+    <a href="/add_question"></a>
+<div class="divider">- -</div><!--TODO:ADD A WHOLE NEW CLACULATOR SECTION WITH NUMPY FOR GREATER STUD,CALC-->
+
+
+<!--DEDICATING-->
+<div class="about">
+    <div class="about-box">
+        <h2>DEDICATED TO:</H2>
+            <P> MY CLASS TEACHER, LAB ASSISTANTS,</P><P>Principal sir and Vice-Principal ma'am</p>
+<p>THANKS FOR EVERYTHING</P>
+
+    <p class="name">-Atharva</p>
+</div>
+</div>
+<footer>smarty class track  •made with css html python flask and love</footer>
 </body>
+<!--TODO:CREATE A COURSE CREATION FILE AND ADD IT IN THIS ONE HWERE TEACHER CAN UPLOAD SOME COURSE AND HW MAYBE-->
 
 </html>
