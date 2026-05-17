@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root
+
+/*I HAVE TO ADD SOME WHITISH LOOK SOME BLACK GREEN BLUE COLORS AND FOR BORDER BLACKIE  AND WILLSEE*/
+    {
+    --bg: #f0ede4;
+
+    --panel: #ffffff;
+    --text: #0B0101;
+    --primary: #a3e635;
+    --secondary: #2563EB;
+    --BORDER: #0B0C10;
+
+
+}
+
+BODY {
+    FONT-FAMILY: 'SPACE GROTESK', sans-serif;
+    min-height: 100VH;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 20px;
+    background-image: radial-gradient(var(--border)) 1px, transparent 0);
+    background-size: 24px 24px;
+    background-opacity: 0.05
+}
+
+.header {
+    text-align: left;
+    max-width: 760px;
+    margin: 40px auto 20px;
+
+
+    padding: 0 20px;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 0.9;
+}
+
+.header .tagline {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    background var(--secondary);
+    color: white;
+    padding: 5px 8px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transform: rotate(-1deg);
+    /* worked on header*/
+
+
+}
