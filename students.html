@@ -1,5 +1,5 @@
 
-       <html>
+      <html>
 
 <head>
     <title>STUDENTS</title>
@@ -14,7 +14,7 @@
             background-position: center;
             background-attachment: fixed;
             margin: 0;
-            FONT-FAMILY:: 'Space grotesk',verdana;
+            FONT-FAMILY: 'Space grotesk',verdana;
             
         }
         .wrap{min-height:103vh; BACKGROUND:RGBA(0,0,0,0.55) ; PADDING:30Px 20px;}
@@ -54,13 +54,35 @@ font-size:15px; font-family:'Space Grotesk',sans-serif; border:4px solid white; 
 /* studs list*/
 ul{padding:0;
 margin-top:12px; max-width:323PX;}
+li {
+    list-style:none;
+    background:rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.2);
+    color: #79867C;
+    PADDING:10px 15px;
+    margin:7px 0;
+    font-size:15px;
+    font-weight:700;
+    text-transform:uppercase;
+    border-left: 4px solid #a3e635;
+
+
+}
+.empty{color:
+
+
+#aaa; font-size:14px;
+margin-top:10px;
+}/*todo:delete and port account butn to be added/*/
+
     </style>
 </head>
 
-<body><a href="/">back to home</a>
-    <div style="min-height:100vh; background:rgba(0,0,0,0.45); padding:20px;"> <a href="/">back to home</a>
+<body><div class="wrap"><a href="/">back to home</a>
+    <h2>STUDENTS</H2>
 
-        <h2>students</h2>
+    
+        
         <form action="/add_student" method="POST">
             <input type="text" name="name" placeholder="enter name" />
 
