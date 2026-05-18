@@ -144,10 +144,11 @@ def add_student():
     return redirect("/students")
 
 @app.route("/attendance")
-def attendance():
+def attendancee():
     s = get_students()
-    return render_template("attendance.html", students=s)
-
+    today = date.today().strftime("%d/%m/%Y")  # DD/MM/YYYY format
+    total = len(s)
+    return render_template("attendance.html", students=s, today=today, total=total)
 @app.route("/save_attendance", methods=["POST"])
 def submit_attendance():
     s = get_students()
