@@ -4,41 +4,80 @@
     <title>Mark Attendance</title>
     <style>
         @IMPORT URL('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-        
+
 
         body {
-            background-image: url('/static/images/attendbg.jpg'); background-size:Cover;
-            background-position:center; background-attachment:fixed ;
-            margin:0; font-family:'Space Grotesk',
-            verdana;}
-            .wrap {
-                min-height:100vh;
-                background:rgba(0,0,0,0.1);
-                padding:30px 25x;
-            }
-            a.back {
-                color:#a2e601;font-size:12px; font-weight:700;text-decoration:none;
-                text-transform:uppercase;letter-spacing:2px;
-            }
-            h2{color:white;
-            font-size:42px;;font-weight:706;
-        text-transform:uppercase; letter-spacing:-1px;margin:
-    20px 0 5px;}
-    /*dating*/
-    .infobar{display:flex; gap:25px; margin-bottom:12px; align-items: center ; }
-    .infobar span{ color:#cab; font-size:11px; font-weight:678;text-transform:uppercase; letter-spacing: 1px;}
-    .infobar .highlight{color:#A3E653}
-    INPUT[TYPE="Date"]  {
-        padding:7PX 12PX;FONT-SIZE:13PX;FONT-FAMILY:  'Space Grotesk', sans-serif;
-        BORDER:2PX SOLID RGBA(255,255,255,0.4);
-        BACKGROUND: RGBA(255,255,255,0.1); COLOR:WHITE;OUTLINE:NONE; CURSOR:POINTER;
-    }
+            background-image: url('/static/images/attendbg.jpg');
+            background-size: Cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: 'Space Grotesk',
+                verdana;
+        }
+
+        .wrap {
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 30px 25x;
+        }
+
+        a.back {
+            color: #a2e601;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 42px;
+            ;
+            font-weight: 706;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin:
+                20px 0 5px;
+        }
+
+        /*dating*/
+        .infobar {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .infobar span {
+            color: #cab;
+            font-size: 11px;
+            font-weight: 678;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .infobar .highlight {
+            color: #A3E653
+        }
+
+        INPUT[TYPE="Date"] {
+            padding: 7PX 12PX;
+            FONT-SIZE: 13PX;
+            FONT-FAMILY: 'Space Grotesk', sans-serif;
+            BORDER: 2PX SOLID RGBA(255, 255, 255, 0.4);
+            BACKGROUND: RGBA(255, 255, 255, 0.1);
+            COLOR: WHITE;
+            OUTLINE: NONE;
+            CURSOR: POINTER;
+        }
 
         table {
             width: 90%;
-            MAX-WIDTH:600 PX;
+            MAX-WIDTH: 600 PX;
             border-collapse: collapse;
-            background: RGBA(255,255,255,0.07);
+            background: RGBA(255, 255, 255, 0.07);
             margin-top: 12px;
             /*MADE ITA GOOD LOOKING ONE*/
         }
@@ -48,38 +87,44 @@
             padding: 8px 12px;
             border: 1px solid #ccc;
             text-align: left;
-            COLOR:#F0F0F1;
-            FONT-SIZE:12PX;
+            COLOR: #F0F0F1;
+            FONT-SIZE: 12PX;
         }
 
         th {
             background: #4caf50;
             color: #fff;
-            TEXT-TRANSFORM:UPPERCASE;
-            FONT-SIZE:14PX;
-            LETTER-SPACING:1PX;
+            TEXT-TRANSFORM: UPPERCASE;
+            FONT-SIZE: 14PX;
+            LETTER-SPACING: 1PX;
         }
-INPUT[TYPE="radio"]{cursor:pointer;}
 
-        .btn 
+        INPUT[TYPE="radio"] {
+            cursor: pointer;
+        }
+
+        .btn {
             padding: 9px 17px;
             background: green;
             color: #0b0c10;
             border: none;
-            font-weight:700;
-            font-size:14px;
-            font-family:'CYBER GROTESK', TAHOMA
+            font-weight: 700;
+            font-size: 14px;
+            font-family: 'CYBER GROTESK', TAHOMA;
             margin-top: 12px;
-            Text-transform:uppercaSE;
+            Text-transform: uppercaSE;
             cursor: pointer;
-            margin-top:15px;
-        box-shadow:3px 3px 0px white;
+            margin-top: 15px;
+            box-shadow: 3px 3px 0px white;
 
-        } .btn:hover[transform:translate(-1px,-1px);]
-        box-shadow: 4px 4px 0px  white;}
-
-       /*todo:ADD WARNING OF ALR.MARKED*/
         }
+
+        .btn:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px white;
+        }
+
+        /*todo:ADD WARNING OF ALR.MARKED*/
     </style>
 </head>
 
@@ -110,6 +155,7 @@ INPUT[TYPE="radio"]{cursor:pointer;}
 
 
         <!--Todo:ADD A DATA PICKER-->
+        <!--todo:add a changer that change if wrong-->
         <button class="btn" type="submit">save attendance</button>
     </FORM>
 </BODY>
