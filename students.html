@@ -3,7 +3,7 @@
 
 <head>
     <title>STUDENTS</title>
-   
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 
@@ -14,75 +14,122 @@
             background-position: center;
             background-attachment: fixed;
             margin: 0;
-            FONT-FAMILY: 'Space grotesk',verdana;
-            
+            FONT-FAMILY: 'Space grotesk', verdana;
+
         }
-        .wrap{min-height:103vh; BACKGROUND:RGBA(0,0,0,0.55) ; PADDING:30Px 20px;}
-        a.back{color:#a3e635; font-size:13px;
-        font-weight:700; text-Decoration:None;text-transform:uppercase;letter-spacing: 2px;}
-h2 {
-    color:white;
-    font-size:31px;
-    font-weight:700;
-    text-transform:uppercase;
-    margin:20px 0 15px;
-    letter-spacing: -1px;
 
-}
-/*form stylings*,TODO:ADD A CUSTOM TEMPLATE*/
-.FOrm{
-    display:flex;
-    gap:10px;
-    margin-bottom:33px;
-}
-input[type="text" ]{padding:10px 15px;
-font-size:15px; font-family:'Space Grotesk',sans-serif; border:4px solid white; background: rgba(255,255,255,0.1); color:#E2E5DE;outline:none; width:278px; }
- input::placeholder {color:#aab ;}
- button{
-    padding:10px 20px; background:#a3e365; 
-    COLOR:#0B0C10;
-    BORDER:none;
-    font-weight:693;
-    font-size:20px;
-    font-family: 'Space Grotesk', Tahoma;
-    text-transform:uppercase;cursor:pointer;
-    box-shadow:3px 3px 0px white;
+        .wrap {
+            min-height: 103vh;
+            BACKGROUND: RGBA(0, 0, 0, 0.55);
+            PADDING: 30Px 20px;
+        }
 
- }
- button:hover {transform: translate(-1px,-1px) ;box-shadow: 4px 4px 0px white;
-}
-/* studs list*/
-ul{padding:0;
-margin-top:12px; max-width:323PX;}
-li {
-    list-style:none;
-    background:rgba(255,255,255,0.08);
-    border: 2px solid rgba(255,255,255,0.2);
-    color: #79867C;
-    PADDING:10px 15px;
-    margin:7px 0;
-    font-size:15px;
-    font-weight:700;
-    text-transform:uppercase;
-    border-left: 4px solid #a3e635;
+        a.back {
+            color: #a3e635;
+            font-size: 13px;
+            font-weight: 700;
+            text-Decoration: None;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 31px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 20px 0 15px;
+            letter-spacing: -1px;
+
+        }
+
+        /*form stylings*,TODO:ADD A CUSTOM TEMPLATE*/
+        .FOrm {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 33px;
+        }
+
+        input[type="text"] {
+            padding: 10px 15px;
+            font-size: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+            border: 4px solid white;
+            background: rgba(255, 255, 255, 0.1);
+            color: #E2E5DE;
+            outline: none;
+            width: 278px;
+        }
+
+        input::placeholder {
+            color: #aab;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #a3e635;
+            color: #36454F;
+            BORDER: NONE;
+            FONT-WEIGHT: 700;
+            FONT-SIZE: 18PX;
+            FONT-FAMILY: 'Space Grotesk', SANS-SERIF;
+            TEXT-TRANSFORM: UPPERCASE;
+            CURSOR: POINTER;
+            BOX-SHADOW: 3PX 3PX 3PX 0PX #F0F1F9;
+        }
+
+        /*REMOVED  BUTTON CUZ IT CAUSED HURDLE AND DIDNT WORKED FOR SHADOWING*/
 
 
-}
-.empty{color:
 
 
-#aaa; font-size:14px;
-margin-top:10px;
-}/*todo:delete and port account butn to be added/*/
 
+        button:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px white;
+        }
+
+        /* studs list*/
+        ul {
+            padding: 0;
+            margin-top: 12px;
+            max-width: 323PX;
+        }
+
+        li {
+            list-style: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #79867C;
+            PADDING: 10px 15px;
+            margin: 7px 0;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-left: 4px solid #a3e635;
+
+
+        }
+
+        .empty {
+            color:
+
+
+                #aaa;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /*todo:delete and port account butn to be added/*/
     </style>
 </head>
 
-<body><div class="wrap"><a href="/">back to home</a>
-    <h2>STUDENTS</H2>
+<body>
+    <div class="wrap"><a href="/">back to home</a>
+        <h2>STUDENTS</H2>
 
-    
-        
+
+
         <form action="/add_student" method="POST">
             <input type="text" name="name" placeholder="enter name" />
 
@@ -103,5 +150,6 @@ margin-top:10px;
 
 
 <!--TODO: connect to a js and html file -->
+<!--WILL ADD DLT. STUDENTS-->
 
 </html>
