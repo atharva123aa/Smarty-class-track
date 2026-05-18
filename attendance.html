@@ -133,6 +133,12 @@
 
     <a href="/">BACK TO Hme</a>
     <H2>MARK ATENDANCE</H2>
+    <div class="infobar">
+        <span>TOTAL STUDENTS:<SPAN CLASS="highlight">{{ total }}</span></span><span>|</span><span>date:
+            <span>date:<span class="highlight">{{ today }}</span></span>
+
+    </div>
+    
     <form action="/save_attendance" method="POST">
         <table>
             <tr>
