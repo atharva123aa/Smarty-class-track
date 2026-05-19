@@ -171,7 +171,8 @@ def view_attendance():
 @app.route("/scores")
 def scores():
     studs = get_students()
-    return render_template("scores.html", students=studs)
+    today=date.today().strftime("%d/%m/%Y")
+    return render_template("scores.html", students=studs,today=today)
 
 @app.route("/save_scores", methods=["POST"])
 def submit_scores():
