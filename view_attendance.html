@@ -4,42 +4,67 @@
     <title> Attendance RECORD's</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
-        body{
-            background-image:url('/static/images/reportbg.jpg');background-size:cover;background-position:center;
-            Background-attachment:FIXED;
-            MARGIN:0;
 
-            font-family:'Cyber Grotesk' ,sans-serif;
-           
+        body {
+            background-image: url('/static/images/reportbg.jpg');
+            background-size: cover;
+            background-position: center;
+            Background-attachment: FIXED;
+            MARGIN: 0;
+
+            font-family: 'Cyber Grotesk', sans-serif;
+
         }
-        .wrap{min-height:100vh;background:rgba(0,0,0,0.5);
-    padding:31px 26px;}
 
-    a.back{
-        color:#a2e665;
-        font-size:13px;font-weight:605;text-decoration:none;
-        text-transform:uppercase; letter-spacing:2px;
-    }
-    h2  {
-        color:#E2E5DE;
-        font-size:31px;
-        font-weight:732;text-transform:uppercase;letter-spacing:-1px; margin:  20px  0 5px;
-    }
+        .wrap {
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 31px 26px;
+        }
 
-    /*todo:add a theme selector' and i updated the style now*/
-    .infobat {
-        display:flex;
-        margin-bottom:21px;
-        align-items:left;
-    }
-    .infobar span{color:#acba;
-    font-size:14px; font-weight:700;
-text-transform:uppercase; letter-spacing:1px;} .infobar .highlight{color:#a3e643;  }
+        a.back {
+            color: #a2e665;
+            font-size: 13px;
+            font-weight: 605;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #E2E5DE;
+            font-size: 31px;
+            font-weight: 732;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin: 20px 0 5px;
+        }
+
+        /*todo:add a theme selector' and i updated the style now*/
+        .infobar {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 21px;
+            align-items: left;
+        }
+
+        .infobar span {
+            color: #acba;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .infobar .highlight {
+            color: #a3e643;
+        }
 
         table {
             width: 92%;
             border-collapse: collapse;
-            background: rgba(255,255,255,0.7);margin-top:10px;
+            background: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
         }
 
         /*todo:ADD SOME MORE DECO  */
@@ -47,43 +72,57 @@ text-transform:uppercase; letter-spacing:1px;} .infobar .highlight{color:#a3e643
         td,
         th {
             padding: 9px;
-            border: 1px solid rgba(255,255,255,0.25
-            )color:white;font-size:14px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: white;
+            font-size: 14px;
 
         }
 
         th {
             background: #333;
-           text-transform:uppercase;
-           font-size:13px;letter-spacing:1px; border-bottom:2px solid #A3E653;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #A3E653;
 
         }
 
 
         .present {
             color: #A3E653;
-            FONT-WEIGHT:700 ;
+            FONT-WEIGHT: 700;
         }
 
         .absent {
             color: Red;
-            FONT-WEIGHT:700 ;
+            FONT-WEIGHT: 700;
         }
-        .ABSENT {COLOR:#FF4444; FONT-WEIGHT:700;}
-        .empty {color:#aaa;font-size:12px; margin-top:15px;}
+
+        .ABSENT {
+            COLOR: #FF4444;
+            FONT-WEIGHT: 700;
+        }
+
+        .empty {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 15px;
+        }
 
         a.markbtn {
-            display:inline-block;
-            margin-bottom:20px;
-            padding:10px 20px;
-            background:#a3e625;color:#0b0c10;
-            font-weight:700; FONT-SIZE:13PX; TEXT-DECORATION:NONE; TEXT-TRANSFORM:UPPERCASE;
-            BOX-SHADOW: 3PX 3PX 3PX 0PX WHITE;}
-            color: #555;
-            font-size: 13px;
-            display: block;
-            MARGIN-BOTTOM: 11PX;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #a3e625;
+            color: #0b0c10;
+            font-weight: 700;
+            FONT-SIZE: 13PX;
+            TEXT-DECORATION: NONE;
+            TEXT-TRANSFORM: UPPERCASE;
+            BOX-SHADOW: 3PX 3PX 3PX 0PX WHITE;
         }
+
+        /*the same template as of attendance;)*/
     </STYLE>
 
 </HEAD>
@@ -92,37 +131,38 @@ text-transform:uppercase; letter-spacing:1px;} .infobar .highlight{color:#a3e643
     <DIV CLASS="wrap">
         <a class="back" href="/">← HOME</a>
         <h2> ATENDANCE RECORDS </H2>
-            <DIV CLASS="infobar">
-                <span>today: <span class="highlight">{{ today }}</span></span><span>|</span><span> Total REcords <span class="highlight">{ rcrds|length}</span></span>
+        <DIV CLASS="infobar">
+            <span>today: <span class="highlight">{{ today }}</span></span><span>|</span><span> Total Records <span
+                    class="highlight">{{ records|length}}</span></span>
         </div>
- 
-    <!--TODO:add filter and pdf export later -->
 
-    {% if records %}
+        <!--TODO:add filter and pdf export later -->
+
+        {% if records %}
 
 
-    <table>
-        <tr>
-            <th>date</th>
-            <th>student</th>
+        <table>
+            <tr>
+                <th>date</th>
+                <th>student</th>
 
-            <th>status</th>
-        </tr>
+                <th>status</th>
+            </tr>
 
-        {% for r in records %}
-        <tr>
-            <td> {{ r[0] }}</td>
-            <td> {{ r[1] }}</td>
-            <!--color-->
-            <td class={{r[2].strip().lower() }}"{{r[2] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-    <p class="empty">NO RECS. FOUND</P>
-    {% endif %}
-   
-    <a href="/attendance"> MARK ATTENDANCE</A>
+            {% for r in records %}
+            <tr>
+                <td> {{ r[0] }}</td>
+                <td> {{ r[1] }}</td>
+                <!--color-->
+                <td class={{ r[2].strip().lower() }}>"{{ r[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="empty">NO RECS. FOUND</P>
+        {% endif %}
+
+        <a href="/attendance"> MARK ATTENDANCE</A>
 </body>
 
 </html>
