@@ -166,8 +166,8 @@ def submit_attendance():
 @app.route("/view_attendance")
 def view_attendance():
     records = get_attendance()
+    today=date.today().strftime("%d/%m/%y")
     return render_template("view_attendance.html", records=records)
-
 @app.route("/scores")
 def scores():
     studs = get_students()
