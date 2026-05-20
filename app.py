@@ -187,12 +187,18 @@ def submit_scores():
             data[s] = val
     save_scores(subject, data)
     return redirect("/view_scores")
-
-@app.route("/view_scores")
+@app.route("/view_Scores)
 def view_scores():
     records = get_scores()
-    return render_template("view_scores.html", records=records)
+    today=date.today().strftime(""%d/%m/%Y")
+    grouped= {}
+    for r  in records:
+        subj=r[0]
+        if subj not in grouped:
+            grouped[subj].append(r)
 
+    return render_template("view_scores.html", records=records)
+#grouped things
 @app.route("/report/<name>")
 def report(name):
     #attendance counting
