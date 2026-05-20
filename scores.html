@@ -1,4 +1,4 @@
-<html>
+html>
 
 <head>
     <title>
@@ -6,145 +6,302 @@
     </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
-       * { box-sizing:border-box; margin:0;  padding:0; }
-       body{background-image:url('/static/images/scorebg.jpg');background-size:cover;
-       background-position:center;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('/static/images/scorebg.jpg');
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
-            font-family:'IBM Plex Mono', Monospace;
+            font-family: 'IBM Plex Mono', Monospace;
             padding: 20px;
         }
-        .wrap{
-            min-height:100px;
-            background:rgba(10,10,10,0.82);
-            padding:30px 28px;
+
+        .wrap {
+            min-height: 100px;
+            background: rgba(10, 10, 10, 0.82);
+            padding: 30px 28px;
         }
-        a.back  {
-            color:#f0c040;FONT-SIZE:12PX; TEXT-DECORATION:NONE;
-            TEXT-TRANSFORM:UPPERCASE;
-            LETTER-SPACING:2Px;
+
+        a.back {
+            color: #f0c040;
+            FONT-SIZE: 12PX;
+            TEXT-DECORATION: NONE;
+            TEXT-TRANSFORM: UPPERCASE;
+            LETTER-SPACING: 2Px;
         }
+
         /*exam readings header*/
         .exam {
-            border:2px solid #f0c040; padding:14px 18px;
-            margin:18px 0 24px; 
-            max-width:700px; position:relative;
+            border: 2px solid #f0c040;
+            padding: 14px 18px;
+            margin: 18px 0 24px;
+            max-width: 700px;
+            position: relative;
         }
-.exam h2{color:#f0c040; font-size:22px; text-transform:uppercase;letter-spacing:3px;
-    margin-bottom:8px;
 
-}
+        .exam h2 {
+            color: #f0c040;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+
+        }
 
 
-.exam .meta {display:flex; 
-gap:24px; flex-wrap:wrap}
-.exam .ms {
-    color:#aaa;
-    font-size:12px; 
-    text-transform:uppercase; letter-spacing:1px  ;
-} .exam.metasb{color:
-#e2ebe8}
-.corner { 
-    position:absolute;
-    top:-1px;right:-1px; background:#f0c040;color:#0a0a0b;
-    font-size:14px; font-weight:678; padding:3px 8px; text-transform:uppercase; 
-    letter-spacing:1px; 
-                       }
-                       .formrow{display:flex;gap:15px; flex-wrap:wrap; 
-                    max-width: 680px; margin-bottom:20px;}
-                    .formrow label{ 
-                        color:#aac; font-size: 1PX; Display:block; margin-bottom:5px;
-                    }
-                    .formrow i,.formrow s { padding:9px 11px;
-                    font-size::13px;  font-family:'IBM Plex Mono', monospace; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.2); color:#E2E5DE;  OUTLINE:NONE;
-                
-                 }
-                 .FORMROW I:FOCUS,.FORMROW S:FOCUS{BORDER-COLOR:#F0C123;}
-                 .FORMROW S OPTION{BACKGROUND:#111;}
-/*MARKS AND TODO:A CHANGER FOR THE SAME**/
+        .exam .meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .exam .ms {
+            color: #aaa;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .exam.metasb {
+            color:
+                #e2ebe8
+        }
+
+        .corner {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: #f0c040;
+            color: #0a0a0b;
+            font-size: 14px;
+            font-weight: 678;
+            padding: 3px 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .formrow {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 680px;
+            margin-bottom: 20px;
+        }
+
+        .formrow label {
+            color: #aac;
+            font-size: 1PX;
+            Display: block;
+            margin-bottom: 5px;
+        }
+
+        .formrow i,
+        .formrow s {
+            padding: 9px 11px;
+            font-size: :13px;
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #E2E5DE;
+            OUTLINE: NONE;
+
+        }
+
+        .FORMROW I:FOCUS,
+        .FORMROW S:FOCUS {
+            BORDER-COLOR: #F0C123;
+        }
+
+        .FORMROW S OPTION {
+            BACKGROUND: #111;
+        }
+
+        /*MARKS AND TODO:A CHANGER FOR THE SAME**/
 
         table {
             width: 100%;
-            MAX-WIDTH:679PX; 
+            MAX-WIDTH: 679PX;
             border-collapse: collapse;
-           
+
             margin-top: 4Px
         }
 
-        
+
         th {
-            BACKGROUND: RGBA(240,192,63,0.15)
-            FONT-SIZE:12PX;
-            TEXT-TRANSFORM:UPPERCASE;
-            LETTER-SPACING:1PX;
-            PADDING:8PX 12PX;
-            BORDER: 1PX SOLID RGBA(249,255,255,0.1);TEXT-ALIGN:LEFT;}
-        
+            BACKGROUND: RGBA(240, 192, 63, 0.15) FONT-SIZE:12PX;
+            TEXT-TRANSFORM: UPPERCASE;
+            LETTER-SPACING: 1PX;
+            PADDING: 8PX 12PX;
+            BORDER: 1PX SOLID RGBA(249, 255, 255, 0.1);
+            TEXT-ALIGN: LEFT;
+        }
+
 
 
         td {
-            padding:9px 13px; border:1px solid rgba(255,255,255,0.08); font-size:13px;
+            padding: 9px 13px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 13px;
             color: white;
         }
-        tr:nth-child(even) td {background: rgba(255,255,2,0.03);}
-/* i used ai for this-#tr:nth-child(even) td {background: rgba(255,255,2,0.03);} as it creates  table rows and increase readings*/
-/* todo:add marksbox*/        
-input[type="number"] {
+
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 2, 0.03);
+        }
+
+        /* i used ai for this-#tr:nth-child(even) td {background: rgba(255,255,2,0.03);} as it creates  table rows and increase readings*/
+        .marksbox {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .marksbox button {
+            width: 26px;
+            height: 26px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: "IBM Plex Mono", monospace
+        }
+
+        ;
+        line-height:1;
+        padding:0;
+        }
+
+        .marksbox button:hover {
+            background: #f0c004;
+            color: #0A0A0A;
+        }
+
+        .marksbox input[type="number"] {
             width: 74px;
-            padding: 5px;
-        }
-
-        input[type="text"] {
-            padding: 8px;
-            font-size: 14px;
-            width: 198px;
-        }
-
-        .btn {
-            padding: 9px 18px;
-            background: #2196F3;
-            color: pink;
-            border: 0;
-            margin-top: 12px;
-            cuRsor: pointer;
-            font-size: 15px;
-        }
-
-        a {
-            color: #515;
+            padding: 5px 7px;
             font-size: 13px;
+            font-family: 'IBM Plex Mono', sans-serif;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            text-align: center;
         }
+
+        .timer {
+            color: #f0c040;
+            font-size: 13px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .timer s {
+            font-size: 18px;
+            font-weight: 689;
+        }
+
+        .savebtn {
+
+            margin-top: 18px;
+            padding: 15px 27;
+            background: #f0c040;
+            color: #0a0a0a;
+            border: none;
+            font-weight: 700 font-size:12px;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
+        }
+
+        .savebtn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(255, 255, 255, 0.3);
+        }
+
+        /*add a sub. history later*/
     </style>
 </head>
 
 <body>
-    <a href="/">back to home</a>
-    <h3> ENTER TEST SCORES! </H3>
-    <FORm action="/save_scores" method="POST">
-        <!----subs---->
+    <div class="wrap">
 
+        <a class="back" href="/">← home</a>
+    
+        <!-- exam header box -->
+        <div class="examheader">
+            <div class="corner">exam mode</div>
+            <h2>enter test scores</h2>
+            <div class="meta">
+                <span>date: <b>{{ today }}</b></span>
+                <span>teacher portal</span>
+            </div>
+        </div>
+    
+        <!-- live timer -->
+        <div class="timer">session time: <span id="timer">00:00</span></div>
+    
+        <form action="/save_scores" method="POST">
+    
+            <!-- subject + type + max marks + exam date -->
+            <div class="formrow">
+                <div>
+                    <label>subject name</label>
+                    <input type="text" name="subject" placeholder="e.g. Mathematics" required/>
+                </div>
+                <div>
+                    <label>exam type</label>
+                    <select name="examtype">
+                        <option value="Internal">Internal</option>
+                        <option value="External">External</option>
+                        <option value="Practical">Practical</option> 
+                        <option value="Others">Others</option> 
+                        <option value="ut">unit test</option> 
+                        <option value="Half Yearly">Half Yearly</option> 
+                        <option value="Final">finale</option> 
 
+            </select></div><div> <label>max marks</label>
+                <input type="number" name="maxmarks" value="100" min="1"max="500" style="width:83px;"/>
+            </div>
+        </div>
 
+<label> EXAM DATES?</LABEL>
+    <INPUT TYPE="Date" name="examdate"id= "examdate"/></div>
+</div>
 
-        <input type="text" name="subject" death="subject" required />
-        <BR>
-        <table>
-            <tr>
-                <th>STUDENTS</th>
-                <th> marks out of 100 </th>
-            </tr>
-            {% for s in students %}
-            <tr>
-                <td>{{ s }}</td>
-                <td><input type="number" name="{{ s }}" min="0" max="100" required />
+                   
+                    <table>
+                        <tr>
+                            <th>STUDENTS name</th>
+                            <th> marks out of 100 </th>
+                        </tr>
+                        {% for s in students %}
+                        <tr>
+                            <div class="marksbox:> <!-- minus plus button -->
 
-                </td>
+                                <button type="button" onclick="adj('{{ s }}',-1)">-</button>
+                                <input type="number" name="{{ s }}" id="inp_{{ s|replace(' ','_') }}" 
 
-            </tr>
-            {% endfor %}
-        </table>
-        <!--todo: ADD CUSTOM MIN MAX MARKS WITH A ROUTE CONNECTING THE ED APP AND A PHOTO API --->
-        <BUTTON CLASS="btn" type="submit"> SAVE score</button>
-    </form>
+                                min="0" max="500" value="0" required/>
+                                <button type="button" onclick="adj('{{ s }}',1)">+</button>
+                            </div>
+
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <!--todo: ADD CUSTOM MIN MAX MARKS WITH A ROUTE CONNECTING THE ED APP AND A PHOTO API --->
+                    <BUTTON CLASS="btn" type="submit"> SAVE score</button>
+                </form></div>
 </body>
 
 </html>
