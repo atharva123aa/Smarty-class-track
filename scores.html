@@ -5,31 +5,90 @@
         Test scores
     </title>
     <style>
-        body {
-            font-family: arial;
-            background: #f0f0f0;
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+       * { box-sizing:border-box; margin:0;  padding:0; }
+       body{background-image:url('/static/images/scorebg.jpg');background-size:cover;
+       background-position:center;
+            background-attachment: fixed;
+            font-family:'IBM Plex Mono', Monospace;
             padding: 20px;
         }
+        .wrap{
+            min-height:100px;
+            background:rgba(10,10,10,0.82);
+            padding:30px 28px;
+        }
+        a.back  {
+            color:#f0c040;FONT-SIZE:12PX; TEXT-DECORATION:NONE;
+            TEXT-TRANSFORM:UPPERCASE;
+            LETTER-SPACING:2Px;
+        }
+        /*exam readings header*/
+        .exam {
+            border:2px solid #f0c040; padding:14px 18px;
+            margin:18px 0 24px; 
+            max-width:700px; position:relative;
+        }
+.exam h2{color:#f0c040; font-size:22px; text-transform:uppercase;letter-spacing:3px;
+    margin-bottom:8px;
+
+}
+
+
+.exam .meta {display:flex; 
+gap:24px; flex-wrap:wrap}
+.exam .ms {
+    color:#aaa;
+    font-size:12px; 
+    text-transform:uppercase; letter-spacing:1px  ;
+} .exam.metasb{color:
+#e2ebe8}
+.corner { 
+    position:absolute;
+    top:-1px;right:-1px; background:#f0c040;color:#0a0a0b;
+    font-size:14px; font-weight:678; padding:3px 8px; text-transform:uppercase; 
+    letter-spacing:1px; 
+                       }
+                       .formrow{display:flex;gap:15px; flex-wrap:wrap; 
+                    max-width: 680px; margin-bottom:20px;}
+                    .formrow label{ 
+                        color:#aac; font-size: 1PX; Display:block; margin-bottom:5px;
+                    }
+                    .formrow i,.formrow s { padding:9px 11px;
+                    font-size::13px;  font-family:'IBM Plex Mono', monospace; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.2); color:#E2E5DE;  OUTLINE:NONE;
+                
+                 }
+                 .FORMROW I:FOCUS,.FORMROW S:FOCUS{BORDER-COLOR:#F0C123;}
+                 .FORMROW S OPTION{BACKGROUND:#111;}
+/*MARKS AND TODO:A CHANGER FOR THE SAME**/
 
         table {
-            width: 90%;
+            width: 100%;
+            MAX-WIDTH:679PX; 
             border-collapse: collapse;
-            background: cyan;
-            margin-top: 14 px
+           
+            margin-top: 4Px
         }
 
-        td,
+        
         th {
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-        }
+            BACKGROUND: RGBA(240,192,63,0.15)
+            FONT-SIZE:12PX;
+            TEXT-TRANSFORM:UPPERCASE;
+            LETTER-SPACING:1PX;
+            PADDING:8PX 12PX;
+            BORDER: 1PX SOLID RGBA(249,255,255,0.1);TEXT-ALIGN:LEFT;}
+        
 
-        th {
-            background: #2196F3;
+
+        td {
+            padding:9px 13px; border:1px solid rgba(255,255,255,0.08); font-size:13px;
             color: white;
         }
-
-        input[type="number"] {
+        tr:nth-child(even) td {background: rgba(255,255,2,0.03);}
+/* i used ai for this-#tr:nth-child(even) td {background: rgba(255,255,2,0.03);} as it creates  table rows and increase readings*/
+/* todo:add marksbox*/        
+input[type="number"] {
             width: 74px;
             padding: 5px;
         }
@@ -76,12 +135,12 @@
             {% for s in students %}
             <tr>
                 <td>{{ s }}</td>
-                <td><input type="number" name="{{ s }}" minimum="0" max="100" required />
+                <td><input type="number" name="{{ s }}" min="0" max="100" required />
 
                 </td>
 
             </tr>
-            {% end for %}
+            {% endfor %}
         </table>
         <!--todo: ADD CUSTOM MIN MAX MARKS WITH A ROUTE CONNECTING THE ED APP AND A PHOTO API --->
         <BUTTON CLASS="btn" type="submit"> SAVE score</button>
