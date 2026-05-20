@@ -1,4 +1,4 @@
-html>
+<html>
 
 <head>
     <title>
@@ -19,11 +19,11 @@ html>
             background-position: center;
             background-attachment: fixed;
             font-family: 'IBM Plex Mono', Monospace;
-            padding: 20px;
+            
         }
 
         .wrap {
-            min-height: 100px;
+            min-height: 100vh;
             background: rgba(10, 10, 10, 0.82);
             padding: 30px 28px;
         }
@@ -37,15 +37,15 @@ html>
         }
 
         /*exam readings header*/
-        .exam {
+        .examheader {
             border: 2px solid #f0c040;
             padding: 14px 18px;
             margin: 18px 0 24px;
-            max-width: 700px;
+            max-width: 645px;
             position: relative;
         }
 
-        .exam h2 {
+        .examheader h2 {
             color: #f0c040;
             font-size: 22px;
             text-transform: uppercase;
@@ -55,22 +55,22 @@ html>
         }
 
 
-        .exam .meta {
+        .examheader .meta {
             display: flex;
             gap: 24px;
             flex-wrap: wrap
         }
 
-        .exam .ms {
+        .examheader .meta span  {
             color: #aaa;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .exam.metasb {
+        .exam.meta span b {
             color:
-                #e2ebe8
+                  #e2ebe8;
         }
 
         .corner {
@@ -79,8 +79,8 @@ html>
             right: -1px;
             background: #f0c040;
             color: #0a0a0b;
-            font-size: 14px;
-            font-weight: 678;
+            font-size: 12px;
+            font-weight: 693;
             padding: 3px 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -91,20 +91,18 @@ html>
             gap: 15px;
             flex-wrap: wrap;
             max-width: 680px;
-            margin-bottom: 20px;
-        }
+            margin-bottom: 20px; }
 
         .formrow label {
             color: #aac;
-            font-size: 1PX;
-            Display: block;
+            font-size: 11PX; text-transform:uppercase; letter-spacing :1PX;
+            display: block;
             margin-bottom: 5px;
         }
 
-        .formrow i,
-        .formrow s {
+        .formrow input,.formrow select  {
             padding: 9px 11px;
-            font-size: :13px;
+            font-size: 13px;
             font-family: 'IBM Plex Mono', monospace;
             background: rgba(255, 255, 255, 0.07);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -113,16 +111,16 @@ html>
 
         }
 
-        .FORMROW I:FOCUS,
-        .FORMROW S:FOCUS {
+        .FORMROW input:focus,
+    .FORMROW select:focus {
             BORDER-COLOR: #F0C123;
         }
 
-        .FORMROW S OPTION {
+        .FORMROW select option {
             BACKGROUND: #111;
         }
 
-        /*MARKS AND TODO:A CHANGER FOR THE SAME**/
+        /*MARKS todo:add a template of table**/
 
         table {
             width: 100%;
@@ -134,10 +132,10 @@ html>
 
 
         th {
-            BACKGROUND: RGBA(240, 192, 63, 0.15) FONT-SIZE:12PX;
+            BACKGROUND: RGBA(240, 192, 63, 0.15); color:#f0c040; FONT-SIZE:12PX;
             TEXT-TRANSFORM: UPPERCASE;
             LETTER-SPACING: 1PX;
-            PADDING: 8PX 12PX;
+            PADDING: 9PX 14PX;
             BORDER: 1PX SOLID RGBA(249, 255, 255, 0.1);
             TEXT-ALIGN: LEFT;
         }
@@ -147,8 +145,8 @@ html>
         td {
             padding: 9px 13px;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 13px;
-            color: white;
+            
+            color: white;font-size:14px;
         }
 
         tr:nth-child(even) td {
@@ -170,13 +168,12 @@ html>
             color: white;
             font-size: 18px;
             cursor: pointer;
-            font-family: "IBM Plex Mono", monospace
-        }
+            font-family: "IBM Plex Mono", monospace;
+            line-height:1;
+            padding:0;}
+        
 
-        ;
-        line-height:1;
-        padding:0;
-        }
+    
 
         .marksbox button:hover {
             background: #f0c004;
@@ -202,7 +199,7 @@ html>
             letter-spacing: 2px;
         }
 
-        .timer s {
+        .timer span {
             font-size: 18px;
             font-weight: 689;
         }
@@ -210,11 +207,11 @@ html>
         .savebtn {
 
             margin-top: 18px;
-            padding: 15px 27;
+            padding: 13px 27px;
             background: #f0c040;
             color: #0a0a0a;
             border: none;
-            font-weight: 700 font-size:12px;
+            font-weight: 700 ; font-size:12px;
             font-family: 'IBM Plex Mono', monospace;
             text-transform: uppercase;
             letter-spacing: 2.2px;
@@ -260,21 +257,22 @@ html>
                 <div>
                     <label>exam type</label>
                     <select name="examtype">
+                    
                         <option value="Internal">Internal</option>
                         <option value="External">External</option>
                         <option value="Practical">Practical</option> 
                         <option value="Others">Others</option> 
                         <option value="ut">unit test</option> 
                         <option value="Half Yearly">Half Yearly</option> 
-                        <option value="Final">finale</option> 
+                        <option value="Final">final</option> 
 
             </select></div><div> <label>max marks</label>
-                <input type="number" name="maxmarks" value="100" min="1"max="500" style="width:83px;"/>
+                <input type="number" name="maxmarks" value="100" min="1" max="500" style="width:83px;"/>
             </div>
         </div>
 
-<label> EXAM DATES?</LABEL>
-    <INPUT TYPE="Date" name="examdate"id= "examdate"/></div>
+<label>exam date</LABEL>
+    <INPUT TYPE="Date" name="examdate"id="examdate"/></div>
 </div>
 
                    
@@ -285,12 +283,11 @@ html>
                         </tr>
                         {% for s in students %}
                         <tr>
+                            <td>{{ s }}</td><td>
                             <div class="marksbox:> <!-- minus plus button -->
 
                                 <button type="button" onclick="adj('{{ s }}',-1)">-</button>
-                                <input type="number" name="{{ s }}" id="inp_{{ s|replace(' ','_') }}" 
-
-                                min="0" max="500" value="0" required/>
+                                <input type="number" name="{{ s }}" id="inp_{{ s|replace(' ','_') }}" min="0" max="500" value="0" required/>
                                 <button type="button" onclick="adj('{{ s }}',1)">+</button>
                             </div>
 
@@ -302,6 +299,7 @@ html>
                     <!--todo: ADD CUSTOM MIN MAX MARKS WITH A ROUTE CONNECTING THE ED APP AND A PHOTO API --->
                     <BUTTON CLASS="btn" type="submit"> SAVE score</button>
                 </form></div>
+                <script src="/static/scores.js"></script>
 </body>
 
 </html>
