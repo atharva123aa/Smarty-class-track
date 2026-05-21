@@ -196,8 +196,9 @@ def view_scores():
         subj=r[0]
         if subj not in grouped:
             grouped[subj]=[]          
-            grouped[subj].append(r)
-#grouped things
+        grouped[subj].append(r)
+
+    return render_template("view_scores.html", records=records, grouped=grouped, today=today)
 @app.route("/report/<name>")
 def report(name):
     #attendance counting
