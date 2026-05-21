@@ -1,55 +1,68 @@
 <html>
 
 <head>
-    <title> REPORT CARD </TItle>
+    <title>  Student REPORT CARD </TItle>
     <style>
-        body {
-            font-family: Verdana;
-            Background: lime;
-            padding: 20px;
-        }
 
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+        body {
+            background-image: url('/static/images/reportbg.jpg'); background-size: cover; background-position:center;
+            margin :0;
+            font-family: 'Cyber Grotesk' ,verdana  ;          
+        }
+        .wrap {
+            min-height: 100vh; 
+            background:rgba(0,0,0,0.6); padding:30px 24px;} a.back{color:#A3e652; font-size:14px; 
+                font-weight:670; text-decoration:none; text-transform:uppercase; 
+                letter-spacing:2px;} 
+                 h2 { color:white; font-size:39px; font-weight:687; text-transform:uppercase; letter-spacing:-1px; margin: 20px 0 7px;
+                 }
+                 p.sub {color:#aaa; font-size:13px; text-transform:uppercase;
+                    letter-spacing:3px; margin-bottom:20px;}
         ul {
-            padding: 0;
+            padding: 0; margin:0; 
+            max-width:502px; 
+              
         }
 
         li {
             list-style: none;
-            background: white;
-            padding: 10px 17px;
-            margin: 6px 0;
-
-            border-radius: 3px;
+            background: white;}
+            li a{ display:block; 
+padding: 11px 17px; background: rgba(255,255,255,0.08);
+border:2PX SOLID rgba(255,255,255,0.18); BORDER-LEFT:4PX  SOLID #A4E562; COLOR:#E2E4ED;
+text-decoration: NONE; 
+        FONT:SIZE  14px;
+FONT-WEIGHT:700;
+text-transform: uppercase;
+            TRANSITION:0.13S;
         }
 
-        li a {
-            text-decoration: none;
-            color: #2196F4;
-            font-size: 15px;
-        }
+        li a:hover{
+            background:rgba(123,245,52,0.11);
+            border-left-color:red; transform:translateX(4px);
+        } 
+        .empty {color:#bba; font-size:14px;}
 
-        a.back {
-            color: #555;
-            font-size: 12px;
-        }
+       /*todo:add a uploader/download */
     </style>
 </head>
 <!---ADD A CUSTOMISD TEMPELATE SECTION -->
 
-<BODY>
+<BODY> <div class="wrap">
     <A CLASS="back" href="/">HOME</a>
     <h2> Report cards </h2>
-    <p> PICK STUDENT </P>
+    <p class="sub"> pick a student ,</p>
     {% if students %}
     <ul>
         {% for s in students %}
-        <li><a href="/report/{{s}}">{{s}}</a>
+        <li><a href="/report/{{s}}">📄📄 {{s}}</a>
         </li>
         {% endfor %}
-
+</ul>
         {% else %}
-        <p> NO students found </p>
-        {% endif %}
+        <p class="empty" NO students found </p>
+        {% endif %} </div>
 
 </body>
 
