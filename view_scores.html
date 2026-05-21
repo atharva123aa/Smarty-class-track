@@ -1,101 +1,162 @@
 <html>
 
 <head>
-    <title> Score records </title>
+    <title> Score records-Smarty. </title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+    * {box-sizing:border-box ;margin:0; padding: 0;}
         body {
-            font-family: Tahoma;
-            padding: 19px;
-            background: #00b8b8;
+            background-image: url('/static/images/viewscorebg.jpg');
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+            font-family:'IBM Plex Mono' ,Verdana;
+          
         }
-
-        table {
+.wrap {min-height:100vh; background:  rgba(10,10,10,0.82); padding:30px 28px;}
+a.back{ color: #F0C040; FONT-SIZE:12PX; text-decoration:NONE;
+    TEXT-TRANSFORM:UPPERCASE;
+    LETTER-SPACING:2PX;}
+     H2{ COLOR:#F0C040; 
+    FONT-SIZE:29PX;
+    TEXT-TRANSFORM:UPPERCASE; LETTER-SPACING : 4PX; 
+    MARGIN: 21PX 0 12PX;}
+    /*.INFOBAR*/ .infobar
+    { DISPLAY:FLEX; GAP:15PX; MARGIN-BOTTOM:21PX; FLEX-WRAP:WRAP; }       
+    .infobar span{color:#aca; font-size:13px;  text-transform:uppercase; letter-spacing: 1px;}
+    .hi {
+        color:#f0c040;}
+        .subj-block{
+            margin-bottom: 25px;
+            border: 2px solid rgba(240,192,65,0.3); background: rgba(0,0,0,0.4);
+            max-width:669px;} .subj-header{
+background: rgba(240,192,64,0.12); padding:9px 16px ; 
+border-bottom: 2px solid rgba(240,192,64,0.3); display:flex;
+justify-content:  space-between; align-items:center;  }
+.subj-header h3{
+    color:#f0c040; font-size:14px; text-transform:uppercase;
+    letter-spacing: 2px; margin:0;  
+                             } .subj-header span {color:#aaa; font-size:11px; text-transform:uppercase;}
+ table {
             width: 91%;
+        max-width:670px;
             border-collapse: collapse;
-            background: white;
+    margin-top:  0;
         }
 
-        td,
-        th {
-            padding: 9px;
-            border: 1px solid #ccc;
+      
+        th {background:rgba (240,194,64,0.16);
+
+                                             color:#f0c041;
+                                             font-size:12px ; text-transform:uppercase;
+                                              letter-spacing: 1px; padding:9px 13px; 
+                                             border:1px solid rgba(255,255,255,0.1);
+                                             text-align:left;
+
+            /*todo: add a seperate exam table creation*/
         }
 
-        th {
-            background: #2196F3;
-            color: white;
-        }
-
+        td{padding: 9px 13px;
+            border: 1px solid rgba(255,255,255,0.08);
+            color:white  ;font-size:17px;
+        } tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+           
+        /*grade color*/
         .Aplus {
             color: darkgreen;
-            font-weight: bold;
+            font-weight: 694;
         }
 
         .A {
-            color: Green;
+            color: Green;font-weight: 694;
         }
 
         .B {
             color: blue;
+            font-weight: 694;
         }
 
         .C {
             color: orange;
+            font-weight: 694;
         }
 
         .D {
-            color: darkorange;
+            color: darkorange;font-weight: 694;
         }
 
         .F {
             color: red;
             font-weight: bold
-        }
+        } .avg-row  td {background: rgba(240,193,64,0.07);
+            color:#F0C040; font-size:12px;    
+               font-weight:700;}
+                .empty{ color:#aaa; font-size:13px; margin-top:  14px;
+                }
+.enterbtn  { display:inline-block;   margin-top:19px;
+    padding: 11px 20px; background: #F0C040; COLOR:#0A0A0A; FONT-WEIGHT:678;
+    FONT-SIZE:14PX; TEXT-DECORATION: NONE; TEXT-TRANSFORM:UPPERCASE; 
+    LETTER-SPACING: 2PX; BOX-SHADOW: 3PX 3PX 0PX RGBA(245,192,64,0.4);} 
+    .enterbtn:hover { transform:translate(-2px,-2px);
+        box-shadow:5px 5px 0px RGBA(240,192,64,0.4); }
 
-
-
-        a {
-            color: #555;
-            font-size: 13px;
-            display: block;
-            margin-bottom: 11px;
-        }
-    </style>
-    <!--make a proper area like ptm where you can browse-->
+       
+    <!--make a proper area like ptm where you can browse--></style>
 
 </head>
 
 
 
-<body>
-    <a href="/">home</a>
+<body><div class="wrap">
+     <a class="back" href="/">←home</a>
+   
     <h2> SCORE RECS.</H2>
+        <div class="infobar">
+              <span>date <span class="hi"> {{ today }}</span></span><span>|</span> <span>entries:<span class="hi"{{ records|length }}</span></span><span>|</span><span>subjects: <span class="hey"> {{ grouped|length }}</span></span>span></div>div>
     <!--TODO:add filter for all-->
-    {% if records %}
+    {% if grouped %}
+    {% for subj, rows in grouped .items() %}
+    <div class="subj-block" > <div class="subj-header">
+        <h3>
+         ± {{ subj }}    </h3> <span> {{ rows|length }} students </span></div>
+      
     <table>
         <tr>
-            <th>Subject</th>
+            
             <th>student</th>
-            <th>marks</th>
-            <th>grade or position</th>
+            <th>marks</th><th>Grade or pos.</th>
+           
         </tr>
-        {% for r in records %}
+        {% for r in rows %}
         <tr>
-            <td>{{ r[0] }}</td>
+            
             <td>{{ r[1] }}</td>
             <td>{{ r[2] }}</td>
             <td class="{{ r[3] }}">{{ r[3] }}</td>
 
         </tr>
         {% endfor %}
+        <!--it tricks jinja as calc --> <tr class="avg-row">
+            <td> class averege</td>
+            <td> {% set tot= namespace(val=0) %}
+                {% for r in rows %}
+                {set tot.val =tot.val + r[2]|int %}
+                {% endfor %}
+                {{ (tot.val / rows|length)|round(1) }}
+                </td>
+                <td>-</td></tr>
     </table>
+    </div>
+    {% endfor %}
     {% else %}
-    <p>
-        no score </P>
+    <p class="empty">Nothing here yet - add score first</p>
+        
     {% endif %}
-    <br>
-    <a href="/scores">enter scores</a>
-
+    
+    <a class="enterbtn" href=""/scores">+ new scores</a>
+<br>
+<br>
+</div>
 </body>
 
 </html>
