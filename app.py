@@ -64,12 +64,12 @@ def get_scores():
         return []
     with open(SCORES_file, "r") as f:
         lines = f.readlines()
-        records = []
-        for l in lines:
-            l = l.strip()
-            if l != "":
-                parts = l.split(",")
-                records.append(parts)
+    records= []
+    for l in lines:
+        l = l.strip()
+        if l != "":
+              parts = l.split(",")
+              records.append(parts)
     return records
 
 def save_question(q, opts, ans):
