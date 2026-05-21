@@ -1,5 +1,4 @@
-
-    from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect
 from datetime import date
 import os as m
 
