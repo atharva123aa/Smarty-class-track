@@ -73,6 +73,8 @@ Then open `http://127.0.0.1:5000`
 
 ## Demo Video
 [![Smarty Class Track - How to Use](https://img.youtube.com/vi/9DVuNIcMTrU/0.jpg)](https://www.youtube.com/watch?v=9DVuNIcMTrU)
+
+
 SOME THINGS TO NOTE-
 What i used Ai for
 -For  features in css like shadow  and font i asked  as i was a intermediate begginer in it(not every).
