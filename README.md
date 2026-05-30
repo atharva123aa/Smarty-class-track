@@ -1,65 +1,138 @@
+## SMARTY CLASS TRACK
+
+
+It is a Project i made to bring automation in School register work which is boring.
+
+It includes almost all basic Things a teacher do in register and get bored
+
+In this app you dont have to use whitener backspace is enough
+
+##How i Made It
+
+It is a flask and jinja templated App Made By Html CSS and JS With python for logic.
+
+I deployed it with railways and github for connection and a playable link.
+
+I used intermediate HTML and CSS as that is what i know so far.
+
+I used Python and Flask for core logic and i was a begginer in Flask But knew good python not ml but still more than basic.
+
+This was How i made it
+
+# FILES I MADE SO FAR
+
+App.py
+
+Readme.md
+
+Requirements.txt
+
+Procfile  
+
+Templates/
+
+add_question.html
+
+attendance.html
+
+index.html
+
+quiz.html
+
+quiz_result.html
+
+report.html
+
+report_card.html
+
+scores.html
+
+students.html
+
+view_attendance.html
+
+view_scores.html
+
+Static/
+
+script.js
+
+style.css
+
+Images/
+
+attendbg.jpg
+
+dashboard.png
+
+quizbg.jpg
+
+reportbg.jpg
+
+reportcardbg.jpg
+
+scorebg.jpg
+
+studbg.jpg
+
+viewscorebg.jpg
+
+
+## What Exactly is the project-
+
+A project Consisting of-
+
+1.Attendance System to view and mark it.
+
+2.Score system To view and mark it.
+
+3.A report Card feature to View regular reports.
+
+4.A quiz feature for creating,attending and marking it.
+
+
+## SOME PREVIEWS 
+
+#SCREENSHOT-
+
 
 ![Dashboard](static/images/dashboard.png)
 
-##Smarty Class Track
-The class of yours deserve better,Be smart and tracky. 
 
-It is built for teachers and students who want some automation in their class and want to remove the register hurdles. 
-
-#It consists of-
-An attendance System in which you can view and mark
-A score creator as well as viewer system
-A Report card section 
-A quiz section to create view and preview quizzes.
+#Video-
 
 
-#My Tech Stack-
-Python (Flask)
-Jinja templating
-Html 
-Css
-tiny bit of js.
-
- #My goal
-To reach my school teachers
-Organise my mother work as she is a class teacher
-Make my flask skills more good.
-
-## File structure
-app.py
-Templates/
-index.html
-students.html
-attendance.html
-view_attendance.html
-scores.html
-view_scores.html
-report_card.html
-report.html
-quiz.html
-add_question.html
-quiz_result.html
-static/
-style.css
-script.js
-images/
-...
-and other.txt which get created using railways.
-How to use the app-
-Open it from the link
-Browse Features
-View the things
-In the video There is more info
-## Demo Video
 [![Smarty Class Track - How to Use](https://img.youtube.com/vi/9DVuNIcMTrU/0.jpg)](https://www.youtube.com/watch?v=9DVuNIcMTrU)
 
 
-Notes-
-I used ai for in depth css features like shadows glassmorphism and 1 to 2 more.
-In python i used it for managing intendation  and for flask and jinja templating file structure problems. 
-It can be buggy as it is the first version.
-I will try to add some features like ui improvements calc pdf export and other in next version.
-Dedicated to-
-My mum and school staff
-Horizons Team as it is my submission to them. 
-Made with love from Atharva Awasthi
+##SOME THINGS TO NOTE-
+
+#WHAT I USE AI FOR-
+
+Css features like shadows and glassmorphism(Can be 1 or 2 more)
+
+Python intendation fixing
+
+flask and jinja templating help
+
+
+## CREDITS-
+
+My Laptop and charger
+
+My Wifi
+
+My code editor
+
+For What i made
+
+To submit to horizons ysws
+
+To show that i rly code to my parents especially mum
+
+Show my school staff 
+
+## Who made it
+
+Atharva Awasthi  
+
